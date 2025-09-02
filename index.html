@@ -720,45 +720,82 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- Template Card 1 -->
     <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
       <img src="images/g_mala.png" alt="Template 1" style="width:100%; display:block; transition: transform 0.3s ease;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
-        <i class="fas fa-hotel" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Green Mala</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      <!-- Updated overlay with image icon -->
+      <div class="template-overlay" style="
+            position:absolute; inset:0;
+            background: rgba(0,0,0,0.6);
+            display:flex; justify-content:center; align-items:center;
+            opacity:0; transition: opacity 0.3s ease;">
+        <div style="display:flex; flex-direction:row; align-items:center; gap:12px; text-align:center;">
+          <img src="images/icon_hotel.png" alt="icon" style="width:28px; height:28px;">
+          <h3 style="margin:0; color:white;">Green Mala</h3>
+          <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+        </div>
       </div>
     </div>
 
     <!-- Template Card 2 -->
     <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
       <img src="images/elix_temp.png" alt="Template 2" style="width:100%; display:block; transition: transform 0.3s ease;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
-        <i class="fas fa-spa" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Elix Spa</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      <div class="template-overlay" style="
+            position:absolute; inset:0;
+            background: rgba(0,0,0,0.6);
+            display:flex; justify-content:center; align-items:center;
+            opacity:0; transition: opacity 0.3s ease;">
+        <div style="display:flex; flex-direction:row; align-items:center; gap:12px; text-align:center;">
+          <img src="images/icon_spa.png" alt="icon" style="width:28px; height:28px;">
+          <h3 style="margin:0; color:white;">Elix Spa</h3>
+          <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+        </div>
       </div>
     </div>
 
     <!-- Template Card 3 -->
     <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
       <img src="images/bluebell_temp.png" alt="Template 3" style="width:100%; display:block; transition: transform 0.3s ease;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
-        <i class="fas fa-leaf" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Bluebell</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      <div class="template-overlay" style="
+            position:absolute; inset:0;
+            background: rgba(0,0,0,0.6);
+            display:flex; justify-content:center; align-items:center;
+            opacity:0; transition: opacity 0.3s ease;">
+        <div style="display:flex; flex-direction:row; align-items:center; gap:12px; text-align:center;">
+          <img src="images/icon_leaf.png" alt="icon" style="width:28px; height:28px;">
+          <h3 style="margin:0; color:white;">Bluebell</h3>
+          <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+        </div>
       </div>
     </div>
 
     <!-- Template Card 4 -->
     <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
       <img src="images/lake_temp.png" alt="Template 4" style="width:100%; display:block; transition: transform 0.3s ease;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
-        <i class="fas fa-water" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Lake View</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      <div class="template-overlay" style="
+            position:absolute; inset:0;
+            background: rgba(0,0,0,0.6);
+            display:flex; justify-content:center; align-items:center;
+            opacity:0; transition: opacity 0.3s ease;">
+        <div style="display:flex; flex-direction:row; align-items:center; gap:12px; text-align:center;">
+          <img src="images/icon_water.png" alt="icon" style="width:28px; height:28px;">
+          <h3 style="margin:0; color:white;">Lake View</h3>
+          <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
+
+<style>
+  /* Hover effect */
+  .template-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .template-card:hover .template-overlay {
+    opacity: 1;
+  }
+</style>
+
 
 <!-- Hover effect styles -->
 <style>
