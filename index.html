@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digitalroomz — Landing (Clone)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== VARIABLES ===== */
+    :root{
+      --bg-1: #17142a;
+      --purple-1: #6b4bff;
+      --purple-2: #b86bff;
+      --accent: #7a62ff;
+      --muted: #9aa0b4;
+      --card-bg: #f9f8ff;
+      --glass: rgba(255,255,255,0.06);
+      --round: 14px;
+      --maxw: 1180px;
+      --accent-2: #6be3ff;
+    }
+
+    /* ===== BASE ===== */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Poppins", "Roboto", sans-serif;
+      color:#0f1530;
+      background: linear-gradient(180deg,#0f1430 0%, #1d1336 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:94%;
+      max-width: var(--maxw);
+      margin:0 auto;
+    }
+
+    /* ===== HERO ===== */
+    header.hero{
+      padding:48px 0 24px;
+      color:white;
+      position:relative;
+      overflow:visible;
+    }
+    .hero-inner{
+      display:flex;
+      gap:32px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .hero-left{
+      flex:1;
+      padding-right:20px;
+    }
+    .logo{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      font-weight:700;
+      letter-spacing:0.1em;
+    }
+    .logo .dot{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--purple-2));display:inline-block}
+
+    h1{
+      font-size:32px;
+      margin:16px 0 12px;
+      font-weight:800;
+      color:#fff;
+    }
+    .sub{
+      color: #dfe6ff;
+      margin-bottom:18px;
+      max-width:620px;
+      font-size:15px;
+    }
+
+    .hero-list{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+      color:#dbe4ff;
+      font-size:14px;
+    }
+    .hero-list li{list-style:none;display:flex;gap:8px;align-items:center}
+    .pill{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:30px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      color:white;
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease;
+      font-weight:600;
+    }
+    .pill:hover{transform:translateY(-4px); box-shadow: 0 8px 30px rgba(107,75,255,0.18)}
+
+    /* hero-right phone mock */
+    .hero-right{
+      width:320px;
+      min-width:260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .hero-list {
+  list-style: none;       /* remove default bullets (optional) */
+  padding: 0;
+  margin: 0;
+  display: flex;          /* safe if someone earlier set flex */
+  flex-direction: column; /* <- makes items stack vertically */
+  gap: 12px;              /* spacing between steps */
+  max-width: 420px;       /* optional width */
+}
+
+    .phone-mock{
+      width:220px;
+      border-radius:34px;
+      background: linear-gradient(180deg,#ffffff 0%, #efe8ff 100%);
+      padding:18px;
+      box-shadow: 0 18px 40px rgba(12,10,30,0.6);
+      transform: rotate(-6deg);
+    }
+    .phone-mock img{border-radius:20px}
+
+    /* diagonal separator (curvy wave, looks like image) */
+    .wave{
+      width:100%;
+      height:90px;
+      margin-top:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+      clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    /* ===== WHAT WE OFFER / SERVICES GRID ===== */
+    section.services{padding:28px 0 6px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .services h2{
+      text-align:center;
+      margin:6px 0 20px;
+      color: #fff;
+      font-size:20px;
+      letter-spacing:0.04em;
+    }
+
+    .cards-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+    }
+    .card{
+      background:linear-gradient(180deg,#fff,#faf8ff);
+      border-radius:16px;
+      padding:18px;
+      box-shadow: 0 8px 30px rgba(8,8,20,0.12);
+      transition: transform .22s ease, box-shadow .22s ease;
+      border:1px solid rgba(12,12,30,0.04);
+      position:relative;
+      overflow:visible;
+    }
+    .card:hover{
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 22px 50px rgba(12,10,30,0.18);
+    }
+    .card .title{font-weight:700;margin:6px 0 8px;color:#20243b}
+    .card p{font-size:13px;color:var(--muted);margin:0 0 10px}
+    .card .cta{
+      display:inline-block;padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--purple-2));color:white;font-weight:700;font-size:13px;
+      transition:opacity .15s ease;
+    }
+    .card .logos{
+      display:flex;gap:8px;align-items:center;margin-top:8px;
+    }
+
+    /* Responsive layout for smaller view */
+    @media (max-width:1024px){
+      .hero-inner{flex-direction:column;align-items:flex-start}
+      .hero-right{align-self:center;margin-top:8px}
+      .cards-grid{grid-template-columns: repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      h1{font-size:26px}
+      .cards-grid{grid-template-columns: 1fr}
+      .phone-mock{transform:none}
+    }
+
+    /* ===== Clients / Reviews Slider ===== */
+    .reviews{
+      margin:40px 0;
+      position:relative;
+      padding:28px;
+      background: linear-gradient(90deg, rgba(122,98,255,0.12), rgba(184,107,255,0.06));
+      border-radius:18px;
+      color:#fff;
+    }
+    .reviews .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .review-slider{
+      display:flex;
+      gap:14px;
+      overflow:hidden;
+    }
+    .review{
+      min-width:300px;
+      background:rgba(255,255,255,0.06);
+      padding:18px;border-radius:12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .review p {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #333;
+  padding-left: 50px; /* space for the big quote */
+}
+
+.review p::before {
+  content: "“"; /* opening quotation mark */
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 60px; /* big size */
+  color: #ccc; /* light gray color */
+  font-family: serif;
+}
+
+
+    .review p{color:#f0eefe;font-size:14px}
+    .review .meta{display:flex;gap:12px;align-items:center;margin-top:12px}
+    .review img{width:46px;height:46px;border-radius:50%}
+
+    .slider-controls{display:flex;gap:8px}
+
+    /* ===== Pricing Plans ===== */
+    .plans{
+      padding:36px 0;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+    }
+    
+    .toggle-wrap{
+      background:linear-gradient(90deg,#fff0 0,#fff0 100%);
+      padding:8px;border-radius:28px;display:inline-flex;gap:8px;align-items:center;
+      margin-bottom:18px;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.04);
+    }
+    .toggle-wrap button{padding:8px 14px;border-radius:20px;border:none;background:transparent;color:#fff;font-weight:700;cursor:pointer}
+    .toggle-wrap button.active{background:linear-gradient(90deg,var(--accent),var(--purple-2));box-shadow:0 6px 18px rgba(107,75,255,0.22)}
+
+    .plan-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+      width:100%;
+      max-width:1100px;
+    }
+    .plan{
+      background:linear-gradient(180deg,#fff,#fbf8ff);
+      padding:20px;border-radius:14px;color:#1b1233;box-shadow:0 10px 30px rgba(20,12,40,0.08);
+      border:1px solid rgba(0,0,0,0.03);
+      transform:translateY(0); transition: transform .18s ease;
+    }
+    .plan.popular{
+      transform:translateY(-10px);
+      box-shadow: 0 30px 50px rgba(12,10,30,0.14);
+      border-radius:18px;
+      border:1px solid rgba(106,73,255,0.14);
+    }
+    .plan h3{margin:6px 0 6px}
+    .price{font-size:22px;font-weight:800;margin:6px 0;color:var(--purple-1)}
+    .plan ul{padding:0;margin:8px 0 12px;list-style:none}
+    .plan ul li{padding:6px 0;border-bottom:1px dashed rgba(12,10,30,0.04);font-size:14px;color:var(--muted)}
+    .plan .btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--purple-2));color:white;font-weight:700}
+
+    @media (max-width:900px){
+      .plan-grid{grid-template-columns:1fr}
+    }
+
+    /* ===== FAQ & CTA ===== */
+    .faq{padding:28px 0;color:#fff}
+    .faq .q{background:rgba(255,255,255,0.03);padding:14px;border-radius:10px;margin-bottom:10px;cursor:pointer}
+    .faq .q strong{display:block}
+    .cta{
+      margin:28px 0;padding:30px;border-radius:16px;background:linear-gradient(90deg,var(--purple-1),var(--purple-2));
+      box-shadow:0 18px 40px rgba(100,60,200,0.18);color:white;text-align:center;
+    }
+
+    /* ===== Contact form footer ===== */
+    .contact{
+      padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);color:white;
+    }
+    .contact .form{
+      display:grid;grid-template-columns:1fr 300px;gap:20px;
+    }
+    .input{
+      display:block;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:white;
+    }
+    .submit{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--purple-2));color:white;border:none;font-weight:700}
+
+    /* minor utility */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    small.note{color:rgba(255,255,255,0.6)}
+
+    /* subtle floating blobs to match aesthetic */
+    .blob{
+      position:absolute;border-radius:50%;filter:blur(36px);opacity:0.35;pointer-events:none;
+    }
+    /* ===== Recent Templates Slider with Device Frames ===== */
+.recent-templates {
+  padding: 40px 0;
+}
+
+.template-slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.template-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.template-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+  z-index: 1;
+}
+
+.device-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Laptop style */
+.device-frame.laptop {
+  border: 8px solid #ccc;
+  border-radius: 8px 8px 0 0;
+  background: #000;
+}
+.device-frame.laptop::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  width: 60%;
+  height: 14px;
+  background: #ccc;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Tablet style */
+.device-frame.tablet {
+  border: 14px solid #555;
+  border-radius: 16px;
+  background: #000;
+}
+
+/* Phone style */
+.device-frame.phone {
+  border: 12px solid #333;
+  border-radius: 36px;
+  background: #000;
+}
+
+.device-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.template-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.template-controls button {
+  background: linear-gradient(90deg,var(--accent),var(--purple-2));
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.template-controls button:hover {
+  background: linear-gradient(90deg,var(--purple-2),var(--accent));
+}
+/* Frame for each template */
+.device-frame {
+  width: 750px;       /* fixed width for all templates */
+  height: 420px;      /* fixed height for all templates */
+  overflow: hidden;   /* hide extra parts of the image */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.device-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* fills the frame, crops if necessary */
+  display: block;
+}
+.device-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* fits entire image inside the box */
+  display: block;
+}
+.cta {
+  display: inline-block;        /* makes it respect text-align */
+  padding: 10px 20px;
+  background-color: #1da1f2;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.submit-wrapper {
+  width: 100%;               /* full width of the form */
+  display: flex;             /* flex container */
+  justify-content: center;   /* center horizontally */
+  margin-top: 12px;          /* spacing from textarea */
+}
+
+.submit {
+  padding: 12px 25px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+    .blob.a{width:200px;height:200px;background:linear-gradient(90deg,#6b4bff,#b86bff);top:-40px;right:40px}
+    .blob.b{width:120px;height:120px;background:linear-gradient(90deg,#6be3ff,#7a62ff);bottom:-40px;left:20px}b
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+  <!-- decorative blobs -->
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+
+  <div class="container hero-inner">
+    
+    <!-- Left side -->
+    <div class="hero-left">
+      <img src="images/handd with phone.png">
+      <div class="logo">
+        <img src="images/LOGODIGITAL.png" style="width:200px; height:50px;">
+      </div>
+
+      <h1>Need a Professional Website ?</h1>
+      <p class="sub">
+        We build high-converting websites for all businesses — responsive, fast, 
+        SEO-optimized and ready to convert visitors into customers.
+      </p>
+
+      <ul class="hero-list">
+        <li>✅ Responsive Design</li>
+        <li>⚡ Fast delivery</li>
+        <li>🔎 SEO-optimised</li>
+        <li>📱  Mobile-friendly</li>
+      </ul>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="pill" href="#contact">Book Free Consultation</a>
+        <a class="muted" href="#plans" style="margin-left:8px">See Pricing</a>
+      </div>
+    </div>
+
+    <!-- Right side -->
+    <div class="hero-right">
+      <img src="images/handd with phone.png" style="width: 800px;height: 00px;">
+    </div>
+
+  </div>
+</header>
+
+
+    <div class="wave" aria-hidden="true"></div>
+  </header>
+
+  <!-- WHAT WE OFFER -->
+  <section class="services container">
+    <h1><center>What We Offer</center></h1>
+
+    <div class="cards-grid" style="margin-top:12px">
+      <!-- Row of cards: create 6 cards like screenshot -->
+      <div class="card">
+        <img src="images/logodesign.jpg" alt="" style="width:400px;height:150px;opacity:0.95"/>
+        <div class="title"><center>Logo Design</center></div>
+        <p>Professional logo design to make your brand memorable and build trust with customers.</p>
+       <div class="button-wrapper" style="text-align:center; margin-top:10px;">
+  <a class="cta" href="#contact">Call Now</a>
+</div>
+
+      </div>
+      
+
+      <div class="card">
+        <img src="images/web_img.jpg" alt="" style="width:400px;height:150px"/>
+        <div class="title"><center>Website Development</center></div>
+        <p>Custom websites built with modern stack, optimized for conversions and speed.</p>
+       <div class="button-wrapper" style="text-align:center; margin-top:10px;">
+  <a class="cta" href="#contact">Call Now</a>
+</div>
+      </div>
+
+      <div class="card">
+        <img src="images/application_pic.jpg" alt="" style="width:400px;height:150px"/>
+        <div class="title"><center>Web Application Development</center></div>
+        <p>Scalable web applications and dashboards tuned to your business workflows.</p>
+       <div class="button-wrapper" style="text-align:center; margin-top:10px;">
+  <a class="cta" href="#contact">Call Now</a>
+</div>
+      </div>
+
+      <div class="card">
+        <img src="images/social.webp" alt="" style="width:400px;height:150px"/>
+        <div class="title"><center>Social Media Creations</center></div>
+        <p>Eye-catching creatives and campaign assets to grow your brand online.</p>
+       <div class="button-wrapper" style="text-align:center; margin-top:10px;">
+  <a class="cta" href="#contact">Call Now</a>
+</div>
+      </div>
+
+      <div class="card">
+        <img src="images/google.jpeg" alt="" style="width:400px;height:150px"/>
+        <div class="title"><center>Google My Business</center></div>
+        <p>Set up and optimize your GMB listing for increased local visibility.</p>
+        <div class="button-wrapper" style="text-align:center; margin-top:10px;">
+  <a class="cta" href="#contact">Call Now</a>
+</div>
+      </div>
+
+      <div class="card">
+        <img src="images/poster.webp" alt="" style="width:400px;height:150px"/>
+        <div class="title"><center>Poster & Print Design</center></div>
+        <p>Design for print and banners that look polished and professional.</p>
+        <div class="button-wrapper" style="text-align:center; margin-top:10px;">
+  <a class="cta" href="#contact">Call Now</a>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+   <center>
+ <section class="container reviews" aria-label="Client reviews" 
+         style="max-width:1000px; margin:40px auto; text-align:center;">
+
+<div class="top" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
+  <h3 style="margin:0; font-size:28px; font-weight:600; color:white;">
+    🌟 Client Reviews
+  </h3>
+</div>
+
+
+  <div id="reviewSlider" 
+       style="display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding:10px; scroll-behavior:smooth;">
+    
+    <!-- Review Card -->
+    <div class="review" 
+         style="flex:0 0 300px; scroll-snap-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:left;">
+      <p style="font-style:italic; color:#444;">"Absolutely fantastic service. Built our website on time and got great leads."</p>
+      <div class="meta" style="display:flex; align-items:center; margin-top:15px;">
+        <img src="/images/picture1.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
+        <div>
+          <strong style="color:#222;">Prakash Mathru</strong><br/>
+          <small class="muted" style="color:#777;">Google</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat other review cards similarly -->
+    <div class="review" style="flex:0 0 300px; scroll-snap-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:left;">
+      <p style="font-style:italic; color:#444;">"Great communication and on-time delivery. Highly recommended."</p>
+      <div class="meta" style="display:flex; align-items:center; margin-top:15px;">
+        <img src="/images/pic_2.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
+        <div>
+          <strong style="color:#222;">Devya Goshty</strong><br/>
+          <small class="muted" style="color:#777;">Capterra</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="review" style="flex:0 0 300px; scroll-snap-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:left;">
+      <p style="font-style:italic; color:#444;">"Excellent support post-launch and the design is beautiful!"</p>
+      <div class="meta" style="display:flex; align-items:center; margin-top:15px;">
+        <img src="/images/pic3.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
+        <div>
+          <strong style="color:#222;">Arun Prakash</strong><br/>
+          <small class="muted" style="color:#777;">Google</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Responsive CSS -->
+<style>
+  /* Make slider scrollable on mobile */
+  #reviewSlider::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+
+  @media (max-width: 768px) {
+    #reviewSlider {
+      gap: 15px;
+      padding: 10px 0;
+    }
+    .review {
+      flex:0 0 80%; /* Make cards bigger on mobile */
+      min-width: 250px;
+    }
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .slider-controls {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+  }
+</style>
+
+<!-- Optional JS for prev/next buttons -->
+<script>
+const slider = document.getElementById("reviewSlider");
+document.getElementById("prev").addEventListener("click", () => {
+  slider.scrollBy({ left: -320, behavior: "smooth" });
+});
+document.getElementById("next").addEventListener("click", () => {
+  slider.scrollBy({ left: 320, behavior: "smooth" });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("reviewSlider");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  if (!slider || !prevBtn || !nextBtn) {
+    console.error("Slider or buttons not found!");
+    return;
+  }
+
+  const scrollAmount = slider.querySelector('.review')?.offsetWidth + 20 || 320; // auto card width + gap
+
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+});
+</script>
+
+
+
+  <!-- RECENT TEMPLATE DESIGNS -->
+  <!-- RECENT TEMPLATE DESIGNS -->
+  <!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="recent-templates container" style="max-width:1200px; margin:40px auto; text-align:center;">
+  <h2 style="color:white; margin-bottom:30px;">Our Designs</h2>
+
+  <div class="template-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
+
+    <!-- Template Card 1 -->
+    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
+      <img src="images/g_mala.png" alt="Template 1" style="width:100%; display:block; transition: transform 0.3s ease;">
+      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
+        <i class="fas fa-hotel" style="font-size:28px; margin-bottom:10px;"></i>
+        <h3 style="margin-bottom:12px;">Green Mala</h3>
+        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      </div>
+    </div>
+
+    <!-- Template Card 2 -->
+    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
+      <img src="images/elix_temp.png" alt="Template 2" style="width:100%; display:block; transition: transform 0.3s ease;">
+      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
+        <i class="fas fa-spa" style="font-size:28px; margin-bottom:10px;"></i>
+        <h3 style="margin-bottom:12px;">Elix Spa</h3>
+        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      </div>
+    </div>
+
+    <!-- Template Card 3 -->
+    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
+      <img src="images/bluebell_temp.png" alt="Template 3" style="width:100%; display:block; transition: transform 0.3s ease;">
+      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
+        <i class="fas fa-leaf" style="font-size:28px; margin-bottom:10px;"></i>
+        <h3 style="margin-bottom:12px;">Bluebell</h3>
+        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      </div>
+    </div>
+
+    <!-- Template Card 4 -->
+    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
+      <img src="images/lake_temp.png" alt="Template 4" style="width:100%; display:block; transition: transform 0.3s ease;">
+      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; opacity:0; display:flex; flex-direction:column; justify-content:center; align-items:center; transition: opacity 0.3s ease;">
+        <i class="fas fa-water" style="font-size:28px; margin-bottom:10px;"></i>
+        <h3 style="margin-bottom:12px;">Lake View</h3>
+        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Hover effect styles -->
+<style>
+  .template-card:hover img {
+    transform: scale(1.1);
+  }
+  .template-card:hover .template-overlay {
+    opacity: 1;
+  }
+</style>
+
+
+<!-- Hover effect JS (optional) -->
+<script>
+  const cards = document.querySelectorAll('.template-card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.querySelector('img').style.transform = 'scale(1.05)';
+      card.querySelector('.template-overlay').style.opacity = '1';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.querySelector('img').style.transform = 'scale(1)';
+      card.querySelector('.template-overlay').style.opacity = '0';
+    });
+  });
+</script>
+
+
+<!-- Responsive CSS -->
+<style>
+  /* Hide scrollbar for webkit browsers */
+  #templateSlider::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    #templateSlider {
+      gap: 10px;
+    }
+    .template-slide {
+      flex:0 0 80%; /* Make slides bigger on mobile */
+      min-width: 250px;
+    }
+    .template-controls {
+      display:flex;
+      justify-content:center;
+      margin-top:15px;
+    }
+  }
+</style>
+
+<!-- JS for prev/next buttons -->
+<script>
+const slider = document.getElementById("templateSlider");
+document.getElementById("templatePrev").addEventListener("click", () => {
+  slider.scrollBy({ left: -320, behavior: "smooth" });
+});
+document.getElementById("templateNext").addEventListener("click", () => {
+  slider.scrollBy({ left: 320, behavior: "smooth" });
+});
+</script>
+
+
+
+<script>
+  const slides = document.querySelectorAll(".template-slide");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  document.getElementById("templateNext").addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  document.getElementById("templatePrev").addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+</script>
+<style>
+  .template-slide {
+    display: none;
+  }
+  .template-slide.active {
+    display: block;
+  }
+  .submit-wrapper {
+  display: flex;               /* make it a flex container */
+  justify-content: center;     /* center the button horizontally */
+  width: 100%;                 /* full width of the parent */
+  margin-top: 12px;            /* optional spacing above */
+}
+
+.submit {
+  padding: 15px 25px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+  
+</style>
+
+<!-- /* <section class="recent-templates container">
+  <h2 style="color:white; text-align:center; margin-bottom:18px;">Recent Template Designs</h2>
+  <div class="template-slider" id="templateSlider">
+    <div class="template-slide active">
+      <div class="device-frame laptop">
+        <img src="images/temp 1.jpg" alt="Template 1">
+      </div>
+    </div>
+    <div class="template-slide">
+      <div class="device-frame tablet">
+        <img src="images/temp 2.jpeg" alt="Template 2">
+      </div>
+    </div>
+    <div class="template-slide">
+      <div class="device-frame phone">
+        <img src="images/template3.jpg" alt="Template 3">
+      </div>
+    </div>
+  </div>
+  <div class="template-controls">
+    <button id="templatePrev">◀</button>
+    <button id="templateNext">▶</button>
+  </div>
+</section> */ -->
+
+
+
+
+  <!-- PRICING -->
+  <section id="plans" class="plans container" style="max-width:900px; margin:40px auto; width:100%;">
+  <h2 style="margin:0; text-align:center;">Flexible Website Plans</h2>
+  <small class="note" style="display:block; text-align:center; margin-bottom:20px;">Choose Monthly or Yearly billing</small>
+
+  <!-- Billing Toggle -->
+  <div class="toggle-wrap" role="tablist" aria-label="billing toggle" style="text-align:center; margin-bottom:20px;">
+    <button id="monthlyBtn" class="active">Monthly Plan</button>
+    <button id="yearlyBtn">Yearly Plan</button>
+  </div>
+
+  <!-- Plans Grid -->
+  <div class="plan-grid" aria-live="polite" style="display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+
+    <div class="plan" style="flex:1 1 calc(33.33% - 13.33px); min-width:250px;">
+      <h3>Basic Plan</h3>
+      <div class="price"><span class="amount" data-month="999" data-year="899">₹999</span> <small>/mo</small></div>
+      <ul>
+        <li>1 Page Website</li>
+        <li>100% Responsive</li>
+        <li>1 Business Email</li>
+        <li>Free Support</li>
+      </ul>
+      <a class="btn" href="#contact">Reach Now</a>
+    </div><br>
+
+    <div class="plan popular" style="flex:1 1 calc(33.33% - 13.33px); min-width:250px;">
+      <h3>Standard Plan</h3>
+      <div class="price"><span class="amount" data-month="2000" data-year="1899">₹2000</span> <small>/mo</small></div>
+      <ul>
+        <li>5 Pages</li>
+        <li>SEO Optimized</li>
+        <li>Free Maintenance</li>
+        <li>Priority Support</li>
+      </ul>
+      <center>
+      <a class="btn" href="#contact">Book Now</a>
+      </center>
+    </div>
+
+    <div class="plan" style="flex:1 1 calc(33.33% - 13.33px); min-width:250px;">
+      <h3>Premium Plan</h3>
+      <div class="price"><span class="amount" data-month="3500" data-year="2999">₹3500</span> <small>/mo</small></div>
+      <ul>
+        <li>Custom Design</li>
+        <li>Ecommerce Support</li>
+        <li>24/7 Support</li>
+        <li>Analytics Setup</li>
+      </ul>
+      <a class="btn" href="#contact">Reach Now</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Responsive CSS -->
+<style>
+  @media (max-width:768px) {
+    .plan-grid {
+      flex-direction:column;
+      gap:20px;
+      align-items:center;
+    }
+    .plan {
+      flex:1 1 90% !important;
+    }
+    .toggle-wrap button {
+      margin-bottom:10px;
+      width:45%;
+    }
+  }
+</style>
+
+<!-- JS for Monthly/Yearly Toggle -->
+<script>
+const monthlyBtn = document.getElementById("monthlyBtn");
+const yearlyBtn = document.getElementById("yearlyBtn");
+const amounts = document.querySelectorAll(".amount");
+
+monthlyBtn.addEventListener("click", () => {
+  monthlyBtn.classList.add("active");
+  yearlyBtn.classList.remove("active");
+  amounts.forEach(a => {
+    a.textContent = "₹" + a.dataset.month;
+    a.nextElementSibling.textContent = "/mo";
+  });
+});
+
+yearlyBtn.addEventListener("click", () => {
+  yearlyBtn.classList.add("active");
+  monthlyBtn.classList.remove("active");
+  amounts.forEach(a => {
+    a.textContent = "₹" + a.dataset.year;
+    a.nextElementSibling.textContent = "/yr";
+  });
+});
+</script>
+
+  <!-- FAQ -->
+ <section class="container faq">
+  <h3 style="color:white">FAQ Questions</h3>
+  <div id="faqList" style="margin-top:12px">
+
+    <div class="q">
+      <strong>How involved do I need to be in the design process?</strong>
+      <div class="answer muted" style="display:none">
+        Logo, Brand cloud, features while keeping you updated at every key stage.
+      </div>
+    </div>
+
+    <div class="q">
+      <strong>Do you provide maintenance?</strong>
+      <div class="answer muted" style="display:none">
+        Yes, monthly maintenance and support options are available.
+      </div>
+    </div>
+
+    <div class="q">
+      <strong>Will my website be SEO friendly?</strong>
+      <div class="answer muted" style="display:none">
+        Yes — built with basic on-page SEO practices included.
+      </div>
+    </div>
+
+    <div class="q">
+      <strong>What is the step-by-step process you follow to build a website?</strong>
+      <div class="answer muted" style="display:none">
+        1. Collect your business details<br>
+        2. Strategy, design, development, and testing<br>
+        3. Launch<br>
+        4. Ongoing support and updates
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Select all questions
+  document.querySelectorAll('.q').forEach(item => {
+    item.addEventListener('click', () => {
+      let answer = item.querySelector('.answer');
+
+      // Toggle visibility
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq .q {
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s;
+  }
+
+  .faq .q:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .faq .answer {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #ddd;
+  }
+</style>
+
+
+  <!-- Why choose us / CTA -->
+  <section class="container">
+    <div class="cta">
+      <h2 style="margin:8px 0 6px">Now What ? Let's Talk !</h2>
+      <p style="margin:0 0 12px">Ready to transform your online presence? Let's build something incredible together.</p>
+      <a class="pill" href="#contact" style="font-weight:800">Call Us Now</a>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="container contact" style="max-width:900px; margin:40px auto; text-align:center; padding:20px;">
+  <h3 style="color:white; margin-bottom:8px;">How Can We Help You</h3>
+  <p class="muted" style="margin-bottom:16px;">Fill the form and we'll get back within 24 hours</p>
+
+  <form class="form" onsubmit="event.preventDefault(); alert('Thanks — demo form submitted');" style="margin-top:12px;">
+    <div class="form-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px;">
+      <input class="input" placeholder="Your Full Name" required style="color:#333;" />
+      <input class="input" placeholder="Your Business Name" style="color:#333;" />
+      <input class="input" placeholder="State" style="color:#333;" />
+      <input class="input" placeholder="Phone Number" style="color:#333;" />
+      <input class="input" placeholder="Email Address" type="email" required style="color:#333;" />
+      <select class="input" style="color:#666363;">
+        <option value="" style="color:#f8ebeb;">Available Plan</option>
+        <option value="monthly" style="color:#333;">Monthly</option>
+        <option value="yearly" style="color:#333;">Yearly</option>
+      </select>
+    </div>
+
+    <textarea class="input" placeholder="Explain about your requirement..." rows="5" style="margin-top:12px; color:#333; width:100%;"></textarea>
+
+    <!-- Centered Submit Button -->
+    <div style="display:flex; justify-content:center; margin-top:12px;">
+      <button class="submit" type="submit" style="padding:12px 24px;">
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <div style="padding:22px 0 48px; text-align:center; color:#dfe6ff; margin-top:20px;">
+    <div style="font-weight:700; margin-top:8px;">Your digital presence investment begins at ₹999 Now</div>
+    <a class="pill" href="#contact" style="margin-top:8px; display:inline-block">Contact Us Now</a>
+    <div style="margin-top:10px; font-size:12px; opacity:.8;">© 2025 Digitalroomz</div>
+  </div>
+</footer>
+
+<style>
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* stack inputs vertically */
+  }
+  .input, select, textarea {
+    width: 100% !important;
+  }
+  .pill {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer.contact {
+    padding: 12px;
+  }
+  button.submit {
+    width: 100%;
+  }
+}
+</style>
+
+
+<script>
+  /* ===== Reviews slider (simple) ===== */
+  (function(){
+    const slider = document.getElementById('reviewSlider');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    let idx = 0;
+
+    function go(i){
+      const cards = slider.children;
+      const w = cards[0].offsetWidth + 14; // gap compensation
+      idx = (i + cards.length) % cards.length;
+      slider.scrollTo({ left: idx * w, behavior: 'smooth' });
+    }
+    next.addEventListener('click', ()=> go(idx+1));
+    prev.addEventListener('click', ()=> go(idx-1));
+
+    // auto rotate
+    setInterval(()=> go(idx+1), 5200);
+    // pause on hover
+    slider.addEventListener('mouseenter', ()=> clearInterval(window._revInt));
+  })();
+
+  /* ===== Pricing toggle ===== */
+  (function(){
+    const monthBtn = document.getElementById('monthlyBtn');
+    const yearBtn = document.getElementById('yearlyBtn');
+    const amounts = document.querySelectorAll('.amount');
+
+    function setMode(mode){
+      if(mode === 'month'){
+        monthBtn.classList.add('active'); yearBtn.classList.remove('active');
+        amounts.forEach(a => a.textContent = '₹' + a.dataset.month);
+      } else {
+        monthBtn.classList.remove('active'); yearBtn.classList.add('active');
+        amounts.forEach(a => a.textContent = '₹' + a.dataset.year);
+      }
+    }
+    monthBtn.addEventListener('click', ()=> setMode('month'));
+    yearBtn.addEventListener('click', ()=> setMode('year'));
+    // default monthly
+    setMode('month');
+  })();
+
+  /* ===== FAQ toggle ===== */
+  document.querySelectorAll('.faq .q').forEach(q=>{
+    q.addEventListener('click', ()=>{
+      const a = q.querySelector('.answer');
+      const showing = a.style.display === 'block';
+      // close all
+      document.querySelectorAll('.faq .q .answer').forEach(x=> x.style.display = 'none');
+      a.style.display = showing ? 'none' : 'block';
+    });
+  });
+
+  /* ===== Small tweak: smooth anchor scroll ===== */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+
+  // Accessibility: reduce motion if user prefers
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.style.scrollBehavior = 'auto';
+  }
+</script>
+</body>
+</html>
