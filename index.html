@@ -772,9 +772,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/g_mala.png" alt="Template 1">
       <div class="template-overlay">
-        <!-- Replace the icon with your logo -->
-        <img src="images/gg.png" alt="Hotel Logo" style="width:100px; height:auto;">
-
+        <img src="images/gg.png" alt="Gundumalai Logo" style="width:100px; height:auto;">
         <h3>Gundumalai Resort</h3>
         <a href="#">View Details</a>
       </div>
@@ -784,17 +782,18 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/elix_temp.png" alt="Template 2">
       <div class="template-overlay">
-         <img src="images/elixer.png" alt="Hotel Logo" style="width:60px; height:auto;">
+        <img src="images/elixer.png" alt="Elixer Hills Logo" style="width:60px; height:auto;">
         <h3>Elixer hills</h3>
         <a href="#">View Details</a>
       </div>
     </div>
 
-    <!-- Template Card 3 -->
+    <!-- Template Card 3 (Bluebells - fixed) -->
     <div class="template-card">
       <img src="images/bluebell_temp.png" alt="Template 3">
       <div class="template-overlay">
-        <img src="images/bluebells.png" alt="Hotel Logo" style="width:200px; height:auto;">
+        <!-- FIX: corrected sizing and kept aspect ratio -->
+        <img src="images/bluebells.png" alt="Bluebells Logo" class="logo-bluebells">
         <h3>Bluebells</h3>
         <a href="#">View Details</a>
       </div>
@@ -804,7 +803,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/lake_temp.png" alt="Template 4">
       <div class="template-overlay">
-        <i class="fas fa-water"></i>
+        <img src="images/lakeview.png" alt="Lake View Logo" style="width:60px; height:auto;">
         <h3>Lake View</h3>
         <a href="#">View Details</a>
       </div>
@@ -813,69 +812,84 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 <style>
-/* Grid Layout */
+/* Grid layout */
 .template-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
-/* Template Card */
+/* Card base */
 .template-card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-.template-card img {
-  width: 100%;
+/* Ensure all preview images are uniform */
+.template-card > img {
   display: block;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  height: 260px;           /* set the same height for all cards */
+  object-fit: cover;       /* prevents distortion */
 }
 
-/* Overlay */
+/* Overlay content */
 .template-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  gap: 10px;
+  padding: 16px;
+
+  background: rgba(0, 0, 0, 0.45); /* darken for readability */
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-.template-card:hover img {
-  transform: scale(1.05); /* zoom effect */
 }
 
 .template-card:hover .template-overlay {
   opacity: 1;
 }
 
-/* Icons, Text & Button */
-.template-overlay i {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
+/* Titles and button */
 .template-overlay h3 {
-  margin-bottom: 12px;
+  margin: 6px 0 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 600;
 }
 
 .template-overlay a {
-  padding: 6px 12px;
-  background: #ff3d00;
-  color: white;
-  border-radius: 6px;
+  display: inline-block;
+  padding: 6px 14px;
+  background: #0ea5e9;
+  color: #fff;
   text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.template-overlay a:hover {
+  background: #0284c7;
+  transform: translateY(-1px);
+}
+
+/* Bluebells specific fix (proportionate logo) */
+.logo-bluebells {
+  width: 120px;   /* adjust as needed */
+  height: auto;
+  object-fit: contain;
 }
 </style>
+
 
 
 <!-- Hover effect -->
