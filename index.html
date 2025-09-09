@@ -772,7 +772,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/g_mala.png" alt="Template 1">
       <div class="template-overlay">
-        <img src="images/gg.png" alt="Gundumalai Logo" class="logo">
+        <img src="images/gg.png" alt="Gundumalai Logo" style="width:100px; height:auto;">
         <h3>Gundumalai Resort</h3>
         <a href="#">View Details</a>
       </div>
@@ -782,8 +782,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/elix_temp.png" alt="Template 2">
       <div class="template-overlay">
-        <img src="images/elixer.png" alt="Elixer Hills Logo" class="logo">
-        <h3>Elixer Hills</h3>
+        <img src="images/elixer.png" alt="Elixer Hills Logo" style="width:60px; height:auto;">
+        <h3>Elixer hills</h3>
         <a href="#">View Details</a>
       </div>
     </div>
@@ -792,7 +792,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/bluebell_temp.png" alt="Template 3">
       <div class="template-overlay">
-        <img src="images/bluebells.png" alt="Bluebells Logo" class="logo logo-bluebells">
+        <!-- FIX: corrected sizing and kept aspect ratio -->
+        <img src="images/bluebells.png" alt="Bluebells Logo" class="logo-bluebells">
         <h3>Bluebells</h3>
         <a href="#">View Details</a>
       </div>
@@ -802,8 +803,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="template-card">
       <img src="images/lake_temp.png" alt="Template 4">
       <div class="template-overlay">
-        <img src="images/lakeview.png" alt="Lake View Logo" class="logo">
-        <h3>Lakepalace</h3>
+        <img src="images/lakeview.png" alt="Lake View Logo" style="width:60px; height:auto;">
+        <h3>Lake</h3>
         <a href="#">View Details</a>
       </div>
     </div>
@@ -826,15 +827,15 @@ document.addEventListener("DOMContentLoaded", () => {
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* Preview images */
+/* Ensure all preview images are uniform */
 .template-card > img {
   display: block;
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  height: 260px;           /* set the same height for all cards */
+  object-fit: cover;       /* prevents distortion */
 }
 
-/* Overlay */
+/* Overlay content */
 .template-overlay {
   position: absolute;
   inset: 0;
@@ -845,7 +846,8 @@ document.addEventListener("DOMContentLoaded", () => {
   text-align: center;
   gap: 10px;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.45);
+
+  background: rgba(0, 0, 0, 0.45); /* darken for readability */
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -854,27 +856,15 @@ document.addEventListener("DOMContentLoaded", () => {
   opacity: 1;
 }
 
-/* Logo default */
-.logo {
-  width: 80px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Bluebells logo override */
-.logo-bluebells {
-  width: 110px;
-}
-
-/* Title */
+/* Titles and button */
 .template-overlay h3 {
   margin: 6px 0 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  line-height: 1.2;
   color: #fff;
   font-weight: 600;
 }
 
-/* Button */
 .template-overlay a {
   display: inline-block;
   padding: 6px 14px;
@@ -892,32 +882,11 @@ document.addEventListener("DOMContentLoaded", () => {
   transform: translateY(-1px);
 }
 
-/* ✅ Mobile responsive */
-@media (max-width: 600px) {
-  .template-grid {
-    grid-template-columns: 1fr; /* stack in one column */
-  }
-
-  .template-card > img {
-    height: 200px; /* smaller height */
-  }
-
-  .logo {
-    width: 60px; /* smaller logos */
-  }
-
-  .logo-bluebells {
-    width: 80px;
-  }
-
-  .template-overlay h3 {
-    font-size: 1rem;
-  }
-
-  .template-overlay a {
-    font-size: 0.85rem;
-    padding: 5px 12px;
-  }
+/* Bluebells specific fix (proportionate logo) */
+.logo-bluebells {
+  width: 120px;   /* adjust as needed */
+  height: auto;
+  object-fit: contain;
 }
 </style>
 
