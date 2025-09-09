@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Designs Section</title>
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background: #222; /* dark background so section is visible */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .recent-templates {
+      max-width: 1200px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .recent-templates h2 {
+      color: white;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .template-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .template-card img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    .template-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .template-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .template-card:hover .template-overlay {
+      opacity: 1;
+    }
+
+    .template-overlay i {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .template-overlay h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .template-overlay a {
+      padding: 6px 12px;
+      background: #ff3d00;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .template-overlay a:hover {
+      background: #e63600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Our Designs Section -->
+  <section class="recent-templates">
+    <h2>Our Designs</h2>
+
+    <div class="template-grid">
+
+      <!-- Template Card 1 -->
+      <div class="template-card">
+        <img src="images/g_mala.png" alt="Template 1">
+        <div class="template-overlay">
+          <i class="fas fa-hotel"></i>
+          <h3>Green Mala</h3>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+      <!-- Template Card 2 -->
+      <div class="template-card">
+        <img src="images/elix_temp.png" alt="Template 2">
+        <div class="template-overlay">
+          <i class="fas fa-spa"></i>
+          <h3>Elix Spa</h3>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+      <!-- Template Card 3 -->
+      <div class="template-card">
+        <img src="images/bluebell_temp.png" alt="Template 3">
+        <div class="template-overlay">
+          <i class="fas fa-leaf"></i>
+          <h3>Bluebell</h3>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+      <!-- Template Card 4 -->
+      <div class="template-card">
+        <img src="images/lake_temp.png" alt="Template 4">
+        <div class="template-overlay">
+          <i class="fas fa-water"></i>
+          <h3>Lake View</h3>
+          <a href="#">View Details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
