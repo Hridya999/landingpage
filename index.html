@@ -589,25 +589,28 @@
 
   <!-- REVIEWS -->
    <center>
- <section class="container reviews" aria-label="Client reviews" 
+<section class="container reviews" aria-label="Client reviews" 
          style="max-width:1000px; margin:40px auto; text-align:center;">
 
-<div class="top" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
-  <h3 style="margin:0; font-size:28px; font-weight:600; color:white;">
-    🌟 Client Reviews
-  </h3>
-</div>
-
+  <div class="top" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
+    <h3 style="margin:0; font-size:28px; font-weight:600; color:white;">
+      🌟 Client Reviews
+    </h3>
+    <div>
+      <button id="prev" style="padding:8px 14px; margin-right:10px; border:none; background:#8f99ad; color:#fff; border-radius:6px; cursor:pointer;">◀</button>
+      <button id="next" style="padding:8px 14px; border:none; background:#b8b0c2; color:#fff; border-radius:6px; cursor:pointer;">▶</button>
+    </div>
+  </div>
 
   <div id="reviewSlider" 
        style="display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding:10px; scroll-behavior:smooth;">
     
-    <!-- Review Card -->
+    <!-- Review Card 1 -->
     <div class="review" 
          style="flex:0 0 300px; scroll-snap-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:left;">
       <p style="font-style:italic; color:#444;">"Absolutely fantastic service. Built our website on time and got great leads."</p>
       <div class="meta" style="display:flex; align-items:center; margin-top:15px;">
-        <img src="/images/picture1.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
+        <img src="images/picture1.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
         <div>
           <strong style="color:#222;">Prakash Mathru</strong><br/>
           <small class="muted" style="color:#777;">Google</small>
@@ -615,11 +618,11 @@
       </div>
     </div>
 
-    <!-- Repeat other review cards similarly -->
+    <!-- Review Card 2 -->
     <div class="review" style="flex:0 0 300px; scroll-snap-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:left;">
       <p style="font-style:italic; color:#444;">"Great communication and on-time delivery. Highly recommended."</p>
       <div class="meta" style="display:flex; align-items:center; margin-top:15px;">
-        <img src="/images/pic_2.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
+        <img src="images/pic_2.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
         <div>
           <strong style="color:#222;">Devya Goshty</strong><br/>
           <small class="muted" style="color:#777;">Capterra</small>
@@ -627,10 +630,11 @@
       </div>
     </div>
 
+    <!-- Review Card 3 -->
     <div class="review" style="flex:0 0 300px; scroll-snap-align:center; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:left;">
       <p style="font-style:italic; color:#444;">"Excellent support post-launch and the design is beautiful!"</p>
       <div class="meta" style="display:flex; align-items:center; margin-top:15px;">
-        <img src="/images/pic3.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
+        <img src="images/pic3.jpg" alt="avatar" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-right:12px;">
         <div>
           <strong style="color:#222;">Arun Prakash</strong><br/>
           <small class="muted" style="color:#777;">Google</small>
@@ -640,6 +644,30 @@
 
   </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("reviewSlider");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  if (!slider || !prevBtn || !nextBtn) {
+    console.error("Slider or buttons not found!");
+    return;
+  }
+
+  const scrollAmount = slider.querySelector('.review')?.offsetWidth + 20 || 320;
+
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+});
+</script>
+
 
 <!-- Responsive CSS -->
 <style>
