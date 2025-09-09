@@ -718,6 +718,15 @@ document.addEventListener("DOMContentLoaded", () => {
       gap: 10px;
     }
   }
+  @media (max-width: 600px) {
+  .template-overlay {
+    opacity: 1;         /* show by default */
+    position: relative; /* sit below the image */
+    background: rgba(0,0,0,0.6); 
+    padding: 12px;
+  }
+}
+
 </style>
 
 <!-- Optional JS for prev/next buttons -->
@@ -748,6 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 });
+
 </script>
 
 
@@ -804,7 +814,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <img src="images/lake_temp.png" alt="Template 4">
       <div class="template-overlay">
         <img src="images/lakeview.png" alt="Lake View Logo" style="width:60px; height:auto;">
-        <h3>Lake</h3>
+        <h3>Lakepalace</h3>
         <a href="#">View Details</a>
       </div>
     </div>
