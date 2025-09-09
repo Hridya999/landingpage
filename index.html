@@ -673,16 +673,6 @@
 
 <!-- Optional JS for prev/next buttons -->
 <script>
-const slider = document.getElementById("reviewSlider");
-document.getElementById("prev").addEventListener("click", () => {
-  slider.scrollBy({ left: -320, behavior: "smooth" });
-});
-document.getElementById("next").addEventListener("click", () => {
-  slider.scrollBy({ left: 320, behavior: "smooth" });
-});
-</script>
-
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("reviewSlider");
   const prevBtn = document.getElementById("prev");
@@ -693,17 +683,24 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const scrollAmount = slider.querySelector('.review')?.offsetWidth + 20 || 320; // auto card width + gap
+  // Calculate scroll width based on first review card
+  const firstReview = slider.querySelector('.review');
+  const scrollAmount = firstReview 
+    ? firstReview.offsetWidth + 20   // card width + gap
+    : 320;                           // fallback value
 
+  // Scroll left
   prevBtn.addEventListener("click", () => {
     slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
 
+  // Scroll right
   nextBtn.addEventListener("click", () => {
     slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 });
 </script>
+
 
 
 
@@ -715,53 +712,120 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Our Designs Section -->
 <!-- Our Designs Section -->
 <!-- Our Designs Section -->
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <section class="recent-templates" style="max-width:1200px; margin:40px auto; text-align:center;">
   <h2 style="color:white; margin-bottom:30px;">Our Designs</h2>
 
-  <div class="template-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
-
+  <div class="template-grid">
     <!-- Template Card 1 -->
-    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
-      <img src="images/g_mala.png" alt="Template 1" style="width:100%; display:block; border-radius:12px;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transition: opacity 0.3s ease;">
-        <i class="fas fa-hotel" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Green Mala</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+    <div class="template-card">
+      <img src="images/g_mala.png" alt="Template 1">
+      <div class="template-overlay">
+        <i class="fas fa-hotel"></i>
+        <h3>Green Mala</h3>
+        <a href="#">View Details</a>
       </div>
     </div>
 
     <!-- Template Card 2 -->
-    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
-      <img src="images/elix_temp.png" alt="Template 2" style="width:100%; display:block; border-radius:12px;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transition: opacity 0.3s ease;">
-        <i class="fas fa-spa" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Elix Spa</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+    <div class="template-card">
+      <img src="images/elix_temp.png" alt="Template 2">
+      <div class="template-overlay">
+        <i class="fas fa-spa"></i>
+        <h3>Elix Spa</h3>
+        <a href="#">View Details</a>
       </div>
     </div>
 
     <!-- Template Card 3 -->
-    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
-      <img src="images/bluebell_temp.png" alt="Template 3" style="width:100%; display:block; border-radius:12px;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transition: opacity 0.3s ease;">
-        <i class="fas fa-leaf" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Bluebell</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+    <div class="template-card">
+      <img src="images/bluebell_temp.png" alt="Template 3">
+      <div class="template-overlay">
+        <i class="fas fa-leaf"></i>
+        <h3>Bluebell</h3>
+        <a href="#">View Details</a>
       </div>
     </div>
 
     <!-- Template Card 4 -->
-    <div class="template-card" style="position:relative; overflow:hidden; border-radius:12px; cursor:pointer;">
-      <img src="images/lake_temp.png" alt="Template 4" style="width:100%; display:block; border-radius:12px;">
-      <div class="template-overlay" style="position:absolute; inset:0; background: rgba(0,0,0,0.6); color:white; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transition: opacity 0.3s ease;">
-        <i class="fas fa-water" style="font-size:28px; margin-bottom:10px;"></i>
-        <h3 style="margin-bottom:12px;">Lake View</h3>
-        <a href="#" style="padding:6px 12px; background:#ff3d00; color:white; border-radius:6px; text-decoration:none;">View Details</a>
+    <div class="template-card">
+      <img src="images/lake_temp.png" alt="Template 4">
+      <div class="template-overlay">
+        <i class="fas fa-water"></i>
+        <h3>Lake View</h3>
+        <a href="#">View Details</a>
       </div>
     </div>
-
   </div>
 </section>
+
+<style>
+/* Grid Layout */
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Template Card */
+.template-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.template-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay */
+.template-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.template-card:hover img {
+  transform: scale(1.05); /* zoom effect */
+}
+
+.template-card:hover .template-overlay {
+  opacity: 1;
+}
+
+/* Icons, Text & Button */
+.template-overlay i {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.template-overlay h3 {
+  margin-bottom: 12px;
+}
+
+.template-overlay a {
+  padding: 6px 12px;
+  background: #ff3d00;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+</style>
+
 
 <!-- Hover effect -->
 <style>
@@ -963,7 +1027,7 @@ document.getElementById("templateNext").addEventListener("click", () => {
       <h3>Basic Plan</h3>
       <div class="price"><span class="amount" data-month="999" data-year="899">₹999</span> <small>/mo</small></div>
       <ul>
-        <li>1 Page Website</li>
+        <li>1-6 Page Website</li>
         <li>100% Responsive</li>
         <li>1 Business Email</li>
         <li>Free Support</li>
@@ -973,21 +1037,21 @@ document.getElementById("templateNext").addEventListener("click", () => {
 
     <div class="plan popular" style="flex:1 1 calc(33.33% - 13.33px); min-width:250px;">
       <h3>Standard Plan</h3>
-      <div class="price"><span class="amount" data-month="2000" data-year="1899">₹2000</span> <small>/mo</small></div>
+      <div class="price"><span class="amount" data-month="2000" data-year="1899">₹1100</span> <small>/mo</small></div>
       <ul>
-        <li>5 Pages</li>
+        <li>6-12 Pages</li>
         <li>SEO Optimized</li>
         <li>Free Maintenance</li>
         <li>Priority Support</li>
       </ul>
       <center>
-      <a class="btn" href="#contact">Book Now</a>
+      <a class="btn" href="#contact">Reach Now</a>
       </center>
     </div>
 
     <div class="plan" style="flex:1 1 calc(33.33% - 13.33px); min-width:250px;">
       <h3>Premium Plan</h3>
-      <div class="price"><span class="amount" data-month="3500" data-year="2999">₹3500</span> <small>/mo</small></div>
+      <div class="price"><span class="amount" data-month="3500" data-year="2999">₹2600</span> <small>/mo</small></div>
       <ul>
         <li>Custom Design</li>
         <li>Ecommerce Support</li>
