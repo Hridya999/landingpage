@@ -1157,34 +1157,35 @@ yearlyBtn.addEventListener("click", () => {
 </script>
 
   <!-- FAQ -->
- <section class="container faq">
-  <h3 style="color:white">FAQ Questions</h3>
+<section class="container faq" style="max-width:800px; margin:40px auto; color:white;">
+  <h3 style="color:white; margin-bottom:20px;">FAQ Questions</h3>
+  
   <div id="faqList" style="margin-top:12px">
 
-    <div class="q">
+    <div class="q" style="margin-bottom:15px; cursor:pointer;">
       <strong>How involved do I need to be in the design process?</strong>
-      <div class="answer muted" style="display:none">
+      <div class="answer muted" style="display:none; margin-top:8px; color:#ccc;">
         Logo, Brand cloud, features while keeping you updated at every key stage.
       </div>
     </div>
 
-    <div class="q">
+    <div class="q" style="margin-bottom:15px; cursor:pointer;">
       <strong>Do you provide maintenance?</strong>
-      <div class="answer muted" style="display:none">
+      <div class="answer muted" style="display:none; margin-top:8px; color:#ccc;">
         Yes, monthly maintenance and support options are available.
       </div>
     </div>
 
-    <div class="q">
+    <div class="q" style="margin-bottom:15px; cursor:pointer;">
       <strong>Will my website be SEO friendly?</strong>
-      <div class="answer muted" style="display:none">
+      <div class="answer muted" style="display:none; margin-top:8px; color:#ccc;">
         Yes — built with basic on-page SEO practices included.
       </div>
     </div>
 
-    <div class="q">
+    <div class="q" style="margin-bottom:15px; cursor:pointer;">
       <strong>What is the step-by-step process you follow to build a website?</strong>
-      <div class="answer muted" style="display:none">
+      <div class="answer muted" style="display:none; margin-top:8px; color:#ccc;">
         1. Collect your business details<br>
         2. Strategy, design, development, and testing<br>
         3. Launch<br>
@@ -1194,6 +1195,23 @@ yearlyBtn.addEventListener("click", () => {
 
   </div>
 </section>
+
+<script>
+  // FAQ Toggle Script
+  document.querySelectorAll(".faq .q").forEach(q => {
+    q.addEventListener("click", () => {
+      const answer = q.querySelector(".answer");
+      const isVisible = answer.style.display === "block";
+
+      // Close all other answers first
+      document.querySelectorAll(".faq .answer").forEach(a => a.style.display = "none");
+
+      // Toggle current one
+      answer.style.display = isVisible ? "none" : "block";
+    });
+  });
+</script>
+
 
 <script>
   // Select all questions
