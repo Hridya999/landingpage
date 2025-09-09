@@ -803,7 +803,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <img src="images/lake_temp.png" alt="Template 4">
       <div class="template-overlay">
         <img src="images/lakeview.png" alt="Lake View Logo" class="logo">
-        <h3>Lake View</h3>
+        <h3>Lakepalace</h3>
         <a href="#">View Details</a>
       </div>
     </div>
@@ -834,7 +834,7 @@ document.addEventListener("DOMContentLoaded", () => {
   object-fit: cover;
 }
 
-/* Overlay content */
+/* Overlay */
 .template-overlay {
   position: absolute;
   inset: 0;
@@ -843,9 +843,8 @@ document.addEventListener("DOMContentLoaded", () => {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 12px;
+  gap: 10px;
   padding: 16px;
-
   background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -864,14 +863,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Bluebells logo override */
 .logo-bluebells {
-  width: 120px;
+  width: 110px;
 }
 
-/* Titles */
+/* Title */
 .template-overlay h3 {
   margin: 6px 0 0;
-  font-size: 1.15rem;
-  line-height: 1.2;
+  font-size: 1.1rem;
   color: #fff;
   font-weight: 600;
 }
@@ -894,14 +892,14 @@ document.addEventListener("DOMContentLoaded", () => {
   transform: translateY(-1px);
 }
 
-/* ✅ Mobile Responsive Fixes */
+/* ✅ Mobile responsive */
 @media (max-width: 600px) {
   .template-grid {
-    grid-template-columns: 1fr; /* single column */
+    grid-template-columns: 1fr; /* stack in one column */
   }
 
   .template-card > img {
-    height: 200px; /* reduce image height */
+    height: 200px; /* smaller height */
   }
 
   .logo {
@@ -909,7 +907,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   .logo-bluebells {
-    width: 90px; /* proportionate fix */
+    width: 80px;
   }
 
   .template-overlay h3 {
@@ -922,7 +920,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 </style>
-
 
 
 
